@@ -25,7 +25,6 @@
 }
 
 .navbar_btn:hover,
-.navbar_btn:focus,
 .navbar_btn:active {
   background-color: #008080db;
 }

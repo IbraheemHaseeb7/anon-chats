@@ -1,0 +1,76 @@
+.messages_container {
+  border: 5px solid teal;
+  width: 95%;
+  height: 70vh;
+  border-radius: 1rem;
+  overflow-y: scroll;
+}
+
+.messages_container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.messages_container::-webkit-scrollbar {
+  width: 10px;
+  background-color: #00808062;
+  border-radius: 10rem;
+}
+
+.messages_container::-webkit-scrollbar-thumb {
+  background-color: teal;
+  border-radius: 10rem;
+}
+
+.message_container {
+  background-color: teal;
+  color: white;
+  display: inline-block;
+  margin: 1rem;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.sendmessage_container {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.sendmessage_container > textarea {
+  flex-grow: 1;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  border: 5px solid teal;
+  border-radius: 0.5rem;
+  color: teal;
+  padding: 0.25rem;
+  outline: none;
+  resize: vertical;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.title_container {
+  width: 95%;
+  border: 5px solid teal;
+  border-radius: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title_container > h3 {
+  margin: 0.5rem;
+  color: teal;
+}
+
+.info_btn {
+  background-color: transparent;
+  border: none;
+  color: teal;
+  cursor: pointer;
+}
