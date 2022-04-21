@@ -10,7 +10,12 @@ import { AuthContext } from "../../pages/_app";
 
 export default function Navbar() {
   // context data
-  const { user, userIn } = useContext(AuthContext);
+  const { user, userIn, setShow, show } = useContext(AuthContext);
+
+  // turning on and off new chat component
+  function newChat() {
+    setShow(!show);
+  }
 
   return (
     <nav className={styles.nav}>
@@ -40,6 +45,7 @@ export default function Navbar() {
           className={styles.navbar_btn}
           data-toggle="tooltip"
           title="Create New Chat"
+          onClick={newChat}
         >
           <AddIcon />
         </button>

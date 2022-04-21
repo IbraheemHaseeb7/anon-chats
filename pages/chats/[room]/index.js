@@ -1,14 +1,12 @@
 import styles from "./room.module.css";
-import Messages from "../../../components/chats/messages";
-import SendMessage from "../../../components/chats/sendmessage";
-import Title from "../../../components/chats/title";
+import Rooms from "../../../components/rooms/room";
+import MajorChatComp from "../../../components/chats/majorChatComp";
 
 export default function Chats() {
   return (
     <div className={styles.chat_container}>
-      <Title name={`random`} />
-      <Messages />
-      <SendMessage />
+      <Rooms />
+      <MajorChatComp />
     </div>
   );
 }
