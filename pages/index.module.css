@@ -1,0 +1,38 @@
+.main_container {
+  width: 100%;
+  height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: teal;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  margin-left: 2rem;
+}
+
+.text > h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.image {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image > img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  border-radius: 50%;
+}
