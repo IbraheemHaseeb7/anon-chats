@@ -33,23 +33,27 @@ export default function Messages({ id }) {
   }, [router.query?.room]);
 
   // creating reference for the messages div
-  const ref = useRef({ scrollHeight: 0, scrollTop: 0});
+  const ref = useRef({ scrollHeight: 0, scrollTop: 0 });
 
   // scrolling to bottom
   useLayoutEffect(() => {
-    ref?.current.scrollTop = ref?.current.scrollHeight
+    ref.current.scrollTop = ref.current.scrollHeight;
   }, [messages]);
 
   return (
-    <div className={styles.messages_container} ref={ref}>
+    <div className={styles.messages_container}>
       <div>
-        {load ? 
-      <>
-        {messages.map(({ content, date, uid, id }) => {
-          return <Message key={id} content={content} date={date} uid={uid} />;
-        })}
-      </> : <Loading />  
-      }
+        {load ? (
+          <>
+            {messages.map(({ content, date, uid, id }) => {
+              return (
+                <Message key={id} content={content} date={date} uid={uid} />
+              );
+            })}
+          </>
+        ) : (
+          <Loading />
+        )}
       </div>
     </div>
   );
