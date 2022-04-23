@@ -5,8 +5,9 @@ import { auth } from "./firebase";
 
 export default function useAuth() {
   // setting up hooks
-  const [userIn, setUserIn] = useState(false);
+  const [userIn, setUserIn] = useState(null);
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -20,11 +21,13 @@ export default function useAuth() {
           uid: auth.currentUser?.uid,
           email: auth.currentUser?.email,
         });
+        setLoading(true);
       } else {
         setUserIn(false);
+        setLoading(true);
       }
     });
   }, [router.query?.path]);
 
-  return [userIn, user];
+  return [userIn, user, loading];
 }

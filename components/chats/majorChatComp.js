@@ -21,7 +21,7 @@ export default function MajorChatComp({ name, id }) {
       }
     >
       <SmallAuthorizer>
-        <Title name={name} />
+        <Title name={name} id={id} />
       </SmallAuthorizer>
       <Messages id={id} />
       <SendMessage roomid={id} />

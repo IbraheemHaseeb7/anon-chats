@@ -18,7 +18,10 @@ export default function Chats() {
             height: "calc(100vh - 10rem)",
           }}
         >
-          <h1>Click on chats on the left to start chatting with people</h1>
+          <h1 style={{ width: "80%", textAlign: "center" }}>
+            Click on chats on the left to start chatting with people or Click on
+            the + icon to create new chats rooms
+          </h1>
         </div>
       </div>
     </Authorizer>

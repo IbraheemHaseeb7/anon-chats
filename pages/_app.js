@@ -11,10 +11,11 @@ export const AuthContext = React.createContext({
   show: false,
   setShow: function () {},
   rooms: null,
+  loading: null,
 });
 
 function MyApp({ Component, pageProps }) {
-  const [userIn, user] = useAuth();
+  const [userIn, user, loading] = useAuth();
   const { rooms } = useRooms();
   const [show, setShow] = useState(false);
 
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
         show: show,
         setShow: setShow,
         rooms: rooms,
+        loading: loading,
       }}
     >
       <Navbar />

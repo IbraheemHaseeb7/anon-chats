@@ -9,6 +9,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../pages/_app";
 import { auth } from "../../libraries/firebase";
 import SmallAuthorizer from "../../libraries/smallAuthorizer";
+import { signOut } from "firebase/auth";
 
 export default function Navbar() {
   // context data
@@ -67,6 +68,9 @@ export default function Navbar() {
             className={styles.navbar_btn}
             data-toggle="tooltip"
             title="Logout"
+            onClick={async () => {
+              await signOut(auth);
+            }}
           >
             <LogoutIcon />
           </button>

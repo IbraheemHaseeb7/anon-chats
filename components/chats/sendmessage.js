@@ -11,6 +11,11 @@ export default function SendMessage({ roomid }) {
   function handleChange(e) {
     dispatch({ type: "typing", payload: e.target.value });
   }
+  function checkEnter(e) {
+    if (e.code === "Enter") {
+      handleSubmit(e);
+    }
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -41,6 +46,7 @@ export default function SendMessage({ roomid }) {
       <textarea
         placeholder="Start typing here"
         onChange={handleChange}
+        onKeyDown={checkEnter}
         value={state.value}
       ></textarea>
       <button className="btn" onClick={handleSubmit} type="submit">
