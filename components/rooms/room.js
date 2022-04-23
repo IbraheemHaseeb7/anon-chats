@@ -15,7 +15,7 @@ export default function Rooms() {
         <div className={styles.rooms_container}>
           <div>
             {rooms.map(({ name, id }) => {
-              return <OneRoom name={name} route={id} room={rooms} />;
+              return <OneRoom key={id} name={name} route={id} room={rooms} />;
             })}
           </div>
         </div>
