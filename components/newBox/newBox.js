@@ -27,7 +27,9 @@ export default function NewBox({ show, setShow }) {
   }
 
   function copy() {
-    navigator.clipboard.writeText(roomId);
+    navigator.clipboard.writeText(
+      `https://anon-chats.vercel.app/chats/${roomId}`
+    );
   }
 
   return (
