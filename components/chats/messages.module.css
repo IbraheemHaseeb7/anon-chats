@@ -78,7 +78,6 @@
 }
 
 .major_chat_component_container {
-  width: calc(100% - 18rem);
   position: absolute;
   right: 1rem;
   top: 5rem;

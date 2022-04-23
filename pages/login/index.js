@@ -1,11 +1,15 @@
 import styles from "./login.module.css";
-import { auth, provider } from "../../libraries/firebase";
+import { auth, firestore, provider } from "../../libraries/firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../_app";
 import { useRouter } from "next/router";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 export default function Login() {
+  // setting up hooks
+  const [user, setUser] = useState(null);
+
   // setting up the router
   const router = useRouter();
 
@@ -17,7 +21,21 @@ export default function Login() {
   // signing in function
   async function signIn() {
     await signInWithPopup(auth, provider).then(() => {
-      router.push("/");
+      router.push("/chats");
+    });
+
+    await getDoc(doc(firestore, `users`, auth.currentUser?.uid)).then((res) => {
+      if (res.data() === undefined) {
+        writeData();
+      }
+    });
+  }
+
+  async function writeData() {
+    await setDoc(doc(firestore, `users`, auth.currentUser?.uid), {
+      name: auth.currentUser?.displayName,
+      uid: auth.currentUser?.uid,
+      photo: auth.currentUser?.photoURL,
     });
   }
 

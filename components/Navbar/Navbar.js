@@ -7,6 +7,8 @@ import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useContext } from "react";
 import { AuthContext } from "../../pages/_app";
+import { auth } from "../../libraries/firebase";
+import SmallAuthorizer from "../../libraries/smallAuthorizer";
 
 export default function Navbar() {
   // context data
@@ -32,23 +34,25 @@ export default function Navbar() {
             <HomeIcon />
           </Link>
         </button>
-        <button
-          className={styles.navbar_btn}
-          data-toggle="tooltip"
-          title="All Chats"
-        >
-          <Link href="/chats">
-            <ChatIcon />
-          </Link>
-        </button>
-        <button
-          className={styles.navbar_btn}
-          data-toggle="tooltip"
-          title="Create New Chat"
-          onClick={newChat}
-        >
-          <AddIcon />
-        </button>
+        <SmallAuthorizer>
+          <button
+            className={styles.navbar_btn}
+            data-toggle="tooltip"
+            title="All Chats"
+          >
+            <Link href={`/chats`}>
+              <ChatIcon />
+            </Link>
+          </button>
+          <button
+            className={styles.navbar_btn}
+            data-toggle="tooltip"
+            title="Create New Chat"
+            onClick={newChat}
+          >
+            <AddIcon />
+          </button>
+        </SmallAuthorizer>
         <button
           className={styles.navbar_btn}
           data-toggle="tooltip"
@@ -58,13 +62,15 @@ export default function Navbar() {
             <LoginIcon />
           </Link>
         </button>
-        <button
-          className={styles.navbar_btn}
-          data-toggle="tooltip"
-          title="Logout"
-        >
-          <LogoutIcon />
-        </button>
+        <SmallAuthorizer>
+          <button
+            className={styles.navbar_btn}
+            data-toggle="tooltip"
+            title="Logout"
+          >
+            <LogoutIcon />
+          </button>
+        </SmallAuthorizer>
       </ul>
       {userIn && <h3 className={styles.welcome}>Welcome, {user.name}</h3>}
     </nav>

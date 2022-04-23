@@ -31,3 +31,9 @@ a {
   border: 5px solid #008080db;
   color: #008080db;
 }
+
+.btn:disabled {
+  border: 5px solid #0080804d;
+  color: #0080804d;
+  cursor: no-drop;
+}
