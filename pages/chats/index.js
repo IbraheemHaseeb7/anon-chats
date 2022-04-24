@@ -1,21 +1,26 @@
-import Rooms from "../../components/rooms/room";
 import Authorizer from "../../libraries/authorizer";
+import Room from "../../components/rooms/room";
 
 export default function Chats() {
   return (
     <Authorizer>
-      <div>
-        <Rooms />
+      <div
+        style={{
+          display: "grid",
+          height: "calc(100vh - 6rem)",
+          gridTemplateColumns: "20% 80%",
+          placeItems: "center",
+        }}
+      >
+        <Room />
         <div
           style={{
-            width: "calc(100% - 16rem)",
-            position: "absolute",
-            top: "5rem",
-            right: "0",
+            color: "teal",
             display: "grid",
             placeItems: "center",
-            color: "#008080af",
-            height: "calc(100vh - 10rem)",
+            width: "95%",
+            height: "100%",
+            gridRow: "1/4",
           }}
         >
           <h1 style={{ width: "80%", textAlign: "center" }}>

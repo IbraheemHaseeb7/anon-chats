@@ -1,10 +1,12 @@
 .messages_container {
   border: 5px solid teal;
-  width: 100%;
+  width: 97%;
   height: 70vh;
   border-radius: 1rem;
   overflow-y: scroll;
   margin: 0;
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 .messages_container > div {
@@ -34,10 +36,12 @@
 }
 
 .sendmessage_container {
-  width: 100%;
+  width: 97%;
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  grid-column: 2/3;
+  grid-row: 3/4;
 }
 
 .sendmessage_container > textarea {
@@ -56,13 +60,15 @@
 }
 
 .title_container {
-  width: 100%;
+  width: 97%;
   border: 5px solid teal;
   border-radius: 1rem;
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 
 .title_container > h3 {
@@ -78,9 +84,11 @@
 }
 
 .major_chat_component_container {
-  position: absolute;
-  right: 1rem;
-  top: 5rem;
+  height: calc(100vh - 6rem);
+  width: 100%;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  place-items: center;
 }
 
 /* POP UP */

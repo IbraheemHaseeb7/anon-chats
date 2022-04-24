@@ -40,9 +40,6 @@ export default function Chats({ data }) {
   return (
     <RoomAuthorizer uid={data.uid}>
       <div className={styles.chat_container}>
-        <SmallAuthorizer>
-          <Rooms />
-        </SmallAuthorizer>
         <MajorChatComp name={data.name} id={data.id} />
       </div>
     </RoomAuthorizer>

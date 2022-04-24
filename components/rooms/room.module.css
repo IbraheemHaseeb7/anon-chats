@@ -20,14 +20,14 @@
 }
 
 .rooms_container {
-  width: 15rem;
+  width: 95%;
   height: calc(100vh - 6rem);
   border: 5px solid teal;
   border-radius: 1rem;
-  position: absolute;
-  top: 5rem;
-  left: 1rem;
   overflow-y: scroll;
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 1/4;
 }
 
 .rooms_container > div {

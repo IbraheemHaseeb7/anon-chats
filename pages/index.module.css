@@ -36,3 +36,18 @@
   object-fit: contain;
   border-radius: 50%;
 }
+
+@media (max-width: 500px) {
+  .main_container {
+    flex-direction: column-reverse;
+    height: 70vh;
+  }
+  .image > img {
+    width: 80%;
+    height: 80%;
+    border-radius: 100rem;
+  }
+  .text {
+    height: 50%;
+  }
+}
