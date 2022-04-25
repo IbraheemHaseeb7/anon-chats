@@ -3,12 +3,17 @@ import SendMessage from "./sendmessage";
 import Title from "./title";
 import styles from "./messages.module.css";
 import SmallAuthorizer from "../../libraries/smallAuthorizer";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../pages/_app";
 import Room from "../rooms/room";
 
 export default function MajorChatComp({ name, id }) {
   const { userIn } = useContext(AuthContext);
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
 
   return (
     <div
@@ -20,7 +25,7 @@ export default function MajorChatComp({ name, id }) {
       }
     >
       <SmallAuthorizer>
-        <Room />
+        {width > 500 && <Room />}
         <Title name={name} id={id} />
       </SmallAuthorizer>
       <Messages id={id} />

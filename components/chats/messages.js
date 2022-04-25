@@ -29,6 +29,7 @@ export default function Messages({ id }) {
 
     return () => {
       unsub();
+      setLoad(true);
     };
   }, [router.query?.room]);
 

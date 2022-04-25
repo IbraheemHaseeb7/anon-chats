@@ -49,7 +49,11 @@ export default function NewBox({ show, setShow }) {
               Create Room
             </button>
             {!room && (
-              <input type="name" value={roomId} className={styles.room_no} />
+              <input
+                type="name"
+                value={`https://anon-chats.vercel.app/chats/${roomId}`}
+                className={styles.room_no}
+              />
             )}
             <input
               type="button"

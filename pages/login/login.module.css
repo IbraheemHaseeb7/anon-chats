@@ -1,11 +1,9 @@
 .login_container {
   width: 100%;
-  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transform: translateY(5rem);
 }
 
 .login_container > h1 {
@@ -31,4 +29,20 @@
 .login_inner_container h1,
 .logout_inner_container h1 {
   color: teal;
+}
+
+@media (max-width: 500px) {
+  .login_container > h1 {
+    width: 90%;
+  }
+  .login_inner_container,
+  .logout_inner_container {
+    width: 80%;
+  }
+
+  .login_inner_container > h1,
+  .logout_inner_container > h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
 }

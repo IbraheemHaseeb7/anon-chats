@@ -3,6 +3,7 @@ import { useReducer } from "react";
 import { auth, firestore } from "../../libraries/firebase";
 import styles from "./messages.module.css";
 import { reducer } from "./reducer";
+import SendIcon from "@mui/icons-material/Send";
 
 export default function SendMessage({ roomid }) {
   // setting up state manangement
@@ -50,7 +51,7 @@ export default function SendMessage({ roomid }) {
         value={state.value}
       ></textarea>
       <button className="btn" onClick={handleSubmit} type="submit">
-        Send Message
+        <SendIcon />
       </button>
     </form>
   );

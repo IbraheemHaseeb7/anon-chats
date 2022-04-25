@@ -26,7 +26,6 @@
   border-radius: 1rem;
   overflow-y: scroll;
   display: grid;
-  grid-column: 1/2;
   grid-row: 1/4;
 }
 
